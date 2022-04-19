@@ -14,20 +14,20 @@ class Escudero extends Personaje {
     personajeSirve
   ) {
     super(nombreEscudero, familiaEscudero, edadEscudero);
-    this.pelotismo = this.filtrarPelotismo(valorPelotismo);
+    this.pelotismo = Escudero.filtrarPelotismo(valorPelotismo);
     if (personajeSirve instanceof Luchador) {
       this.sirveA = personajeSirve;
     }
   }
 
-  filtrarPelotismo(gradoPelotismo) {
+  static filtrarPelotismo(gradoPelotismo) {
     if (gradoPelotismo < 0) {
       return 0;
     }
     if (gradoPelotismo > 10) {
       return 10;
     }
-    return this.gradoPelotismo;
+    return gradoPelotismo;
   }
 
   comunicar() {

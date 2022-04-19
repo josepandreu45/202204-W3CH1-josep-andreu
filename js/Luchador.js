@@ -14,17 +14,17 @@ class Luchador extends Personaje {
   ) {
     super(nombreLuchador, familiaLuchador, edadLuchador);
     this.arma = armaLuchador;
-    this.destreza = this.filtraDestreza(valorDestreza);
+    this.destreza = Luchador.filtraDestreza(valorDestreza);
   }
 
-  filtraDestreza(valorDestreza) {
+  static filtraDestreza(valorDestreza) {
     if (valorDestreza < 0) {
       return 0;
     }
     if (valorDestreza > 10) {
       return 10;
     }
-    return this.valorDestreza;
+    return valorDestreza;
   }
 
   comunicar() {
